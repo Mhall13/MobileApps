@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+function flip(card){
+if(card.className == "f1_container")
+  	card.className += " fliped";
+	else
+		card.className = "f1_container";
+}
+</script>
+<style>
+#game{
+width:780px;
+height:520px;
+margin: auto auto;
+}
+
+.f1_container {
+  display:inline;
+  float:left;
+  margin: 5px;
+  width: 120px;
+  height: 120px;
+  z-index: 1;
+}
+.f1_container {
+  -webkit-perspective: 1000;
+}
+.f1_card {
+  width: 100%;
+  height: 100%;
+  -webkit-transform-style: preserve-3d;
+  -webkit-transition: all .5s linear;
+}
+.fliped .f1_card {
+  -webkit-transform: rotateY(180deg);
+  box-shadow: -5px 5px 5px #aaa;
+}
+.face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+}
+.face.back {
+  display: block;
+  -webkit-transform: rotateY(180deg);
+  -webkit-box-sizing: border-box;
+  color: white;
+  text-align: center;
+  background-color: #aaa;
+}
+</style>
+</head>
+<body>
+
+<div id="game">
+
+<div class="f1_container" onClick="flip(this)">
+<div class="f1_card" class="shadow">
+  <div class="front face">
+	<img src="file:///C:/Users/Matthew%20Poulson/Desktop/School/Mobile%20Application%20Development/champions_96.jpg">
+  </div>
+  <div class="back face center">  
+	<img src="file:///C:/Users/Matthew%20Poulson/Desktop/School/Mobile%20Application%20Development/76_Web_0.jpg">
+  </div>
+</div>
+</div><div class="f1_container" onClick="flip(this)">
+<div class="f1_card" class="shadow">
+  <div class="front face">
+	<img src="file:///C:/Users/Matthew%20Poulson/Desktop/School/Mobile%20Application%20Development/champions_96.jpg">
+  </div>
+  <div class="back face center">  
+	<img src="file:///C:/Users/Matthew%20Poulson/Desktop/School/Mobile%20Application%20Development/51_Web_0.jpg">
+  </div>
+</div>
+</div>
+<div class="f1_container" onClick="flip(this)">
+<div class="f1_card" class="shadow">
+  <div class="front face">
+	<img src="file:///C:/Users/Matthew%20Poulson/Desktop/School/Mobile%20Application%20Development/champions_96.jpg">
+  </div>
+  <div class="back face center">  
+	<img src="file:///C:/Users/Matthew%20Poulson/Desktop/School/Mobile%20Application%20Development/115_Web_0.jpg">
+  </div>
+</div>
+</div><div class="f1_container" onClick="flip(this)">
+<div class="f1_card" class="shadow">
+  <div class="front face">
+	<img src="file:///C:/Users/Matthew%20Poulson/Desktop/School/Mobile%20Application%20Development/champions_96.jpg">
+  </div>
+  <div class="back face center">  
+	<img src="file:///C:/Users/Matthew%20Poulson/Desktop/School/Mobile%20Application%20Development/champions_45.jpg">
+  </div>
+</div>
+</div>
+<div class="f1_container" onClick="flip(this)">
+<div class="f1_card" class="shadow">
+  <div class="front face">
+	<img src="file:///C:/Users/Matthew%20Poulson/Desktop/School/Mobile%20Application%20Development/champions_96.jpg">
+  </div>
+  <div class="back face center">  
+	<img src="file:///C:/Users/Matthew%20Poulson/Desktop/School/Mobile%20Application%20Development/51_Web_0.jpg">
+  </div>
+</div>
+</div><div class="f1_container" onClick="flip(this)">
+<div class="f1_card" class="shadow">
+  <div class="front face">
+	<img src="file:///C:/Users/Matthew%20Poulson/Desktop/School/Mobile%20Application%20Development/champions_96.jpg">
+  </div>
+  <div class="back face center">  
+	<img src="file:///C:/Users/Matthew%20Poulson/Desktop/School/Mobile%20Application%20Development/115_Web_0.jpg">
+  </div>
+</div>
+</div>
+<div class="f1_container" onClick="flip(this)">
+<div class="f1_card" class="shadow">
+  <div class="front face">
+	<img src="file:///C:/Users/Matthew%20Poulson/Desktop/School/Mobile%20Application%20Development/champions_96.jpg">
+  </div>
+  <div class="back face center">  
+	<img src="file:///C:/Users/Matthew%20Poulson/Desktop/School/Mobile%20Application%20Development/37_Web_0.jpg">
+  </div>
+</div>
+</div><div class="f1_container" onClick="flip(this)">
+<div class="f1_card" class="shadow">
+  <div class="front face">
+	<img src="file:///C:/Users/Matthew%20Poulson/Desktop/School/Mobile%20Application%20Development/champions_96.jpg">
+  </div>
+  <div class="back face center">  
+	<img src="file:///C:/Users/Matthew%20Poulson/Desktop/School/Mobile%20Application%20Development/76_Web_0.jpg">
+  </div>
+</div>
+</div>
+<div class="f1_container" onClick="flip(this)">
+<div class="f1_card" class="shadow">
+  <div class="front face">
+	<img src="file:///C:/Users/Matthew%20Poulson/Desktop/School/Mobile%20Application%20Development/champions_96.jpg">
+  </div>
+  <div class="back face center">  
+	<img src="file:///C:/Users/Matthew%20Poulson/Desktop/School/Mobile%20Application%20Development/37_Web_0.jpg">
+  </div>
+</div>
+</div><div class="f1_container" onClick="flip(this)">
+<div class="f1_card" class="shadow">
+  <div class="front face">
+	<img src="file:///C:/Users/Matthew%20Poulson/Desktop/School/Mobile%20Application%20Development/champions_96.jpg">
+  </div>
+  <div class="back face center">  
+	<img src="file:///C:/Users/Matthew%20Poulson/Desktop/School/Mobile%20Application%20Development/champions_45.jpg">
+  </div>
+</div>
+</div>
+<div class="f1_container" onClick="flip(this)">
+<div class="f1_card" class="shadow">
+  <div class="front face">
+	<img src="file:///C:/Users/Matthew%20Poulson/Desktop/School/Mobile%20Application%20Development/champions_96.jpg">
+  </div>
+  <div class="back face center">  
+	<img src="file:///C:/Users/Matthew%20Poulson/Desktop/School/Mobile%20Application%20Development/champions_63.jpg">
+  </div>
+</div>
+</div><div class="f1_container" onClick="flip(this)">
+<div class="f1_card" class="shadow">
+  <div class="front face">
+	<img src="file:///C:/Users/Matthew%20Poulson/Desktop/School/Mobile%20Application%20Development/champions_96.jpg">
+  </div>
+  <div class="back face center">  
+	<img src="file:///C:/Users/Matthew%20Poulson/Desktop/School/Mobile%20Application%20Development/champions_63.jpg">
+  </div>
+</div>
+</div>
+<div class="f1_container" onClick="flip(this)">
+<div class="f1_card" class="shadow">
+  <div class="front face">
+	<img src="file:///C:/Users/Matthew%20Poulson/Desktop/School/Mobile%20Application%20Development/champions_96.jpg">
+  </div>
+  <div class="back face center">  
+	<img src="file:///C:/Users/Matthew%20Poulson/Desktop/School/Mobile%20Application%20Development/99_Web_0.jpg">
+  </div>
+</div>
+</div><div class="f1_container" onClick="flip(this)">
+<div class="f1_card" class="shadow">
+  <div class="front face">
+	<img src="file:///C:/Users/Matthew%20Poulson/Desktop/School/Mobile%20Application%20Development/champions_96.jpg">
+  </div>
+  <div class="back face center">  
+	<img src="file:///C:/Users/Matthew%20Poulson/Desktop/School/Mobile%20Application%20Development/champions_53.jpg">
+  </div>
+</div>
+</div>
+<div class="f1_container" onClick="flip(this)">
+<div class="f1_card" class="shadow">
+  <div class="front face">
+	<img src="file:///C:/Users/Matthew%20Poulson/Desktop/School/Mobile%20Application%20Development/champions_96.jpg">
+  </div>
+  <div class="back face center">  
+	<img src="file:///C:/Users/Matthew%20Poulson/Desktop/School/Mobile%20Application%20Development/99_Web_0.jpg">
+  </div>
+</div>
+</div><div class="f1_container" onClick="flip(this)">
+<div class="f1_card" class="shadow">
+  <div class="front face">
+	<img src="file:///C:/Users/Matthew%20Poulson/Desktop/School/Mobile%20Application%20Development/champions_96.jpg">
+  </div>
+  <div class="back face center">  
+	<img src="file:///C:/Users/Matthew%20Poulson/Desktop/School/Mobile%20Application%20Development/122_Web_0.jpg">
+  </div>
+</div>
+</div>
+<div class="f1_container" onClick="flip(this)">
+<div class="f1_card" class="shadow">
+  <div class="front face">
+	<img src="file:///C:/Users/Matthew%20Poulson/Desktop/School/Mobile%20Application%20Development/champions_96.jpg">
+  </div>
+  <div class="back face center">  
+	<img src="file:///C:/Users/Matthew%20Poulson/Desktop/School/Mobile%20Application%20Development/champions_53.jpg">
+  </div>
+</div>
+</div><div class="f1_container" onClick="flip(this)">
+<div class="f1_card" class="shadow">
+  <div class="front face">
+	<img src="file:///C:/Users/Matthew%20Poulson/Desktop/School/Mobile%20Application%20Development/champions_96.jpg">
+  </div>
+  <div class="back face center">  
+	<img src="file:///C:/Users/Matthew%20Poulson/Desktop/School/Mobile%20Application%20Development/122_Web_0.jpg">
+  </div>
+</div>
+</div>
+
+</div>
+
+</body>
+</html>
