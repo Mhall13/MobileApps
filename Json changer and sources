@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>SandBox of DOOM!</title>
+    </head>
+    <body>
+        <p>
+            Picture image: <span id="0index"></span><br /> 
+            Picture name: <span id="01index"></span><br />
+            <img src="/pic/g-rp.jpg" id="changer">
+        </p>
+
+        <script>
+                var pictures = [
+                    {"picLocation": "/pic/g-rp.jpg", "picName": "Riot"},
+                    {"picLocation": "/pic/1_Web_0.jpg", "picName": "Annie"},
+                    {"picLocation": "/pic/2_Web_0.jpg", "picName": "Olaf"},
+                    {"picLocation": "/pic/3_Web_0.jpg", "picName": "Galio"},
+                    {"picLocation": "/pic/4_Web_0.jpg", "picName": "Twisted Fate"},
+                    {"picLocation": "/pic/5_Web_0.jpg", "picName": "Xin Zhao"},
+                    {"picLocation": "/pic/6_Web_0.jpg", "picName": "Urgot"},
+                    {"picLocation": "/pic/7_Web_0.jpg", "picName": "Le Blanc"},
+                    {"picLocation": "/pic/8_Web_0.jpg", "picName": "Vladimir"},
+                    {"picLocation": "/pic/9_Web_0.jpg", "picName": "Fiddlesticks"},
+                    {"picLocation": "/pic/10_Web_0.jpg", "picName": "Kayle"},
+                    {"picLocation": "/pic/11_Web_0.jpg", "picName": "Master Yi"},
+                    {"picLocation": "/pic/12_Web_0.jpg", "picName": "Alistar"},
+                    {"picLocation": "/pic/13_Web_0.jpg", "picName": "Ryze"},
+                    {"picLocation": "/pic/14_Web_0.jpg", "picName": "Sion"},
+                    {"picLocation": "/pic/15_Web_0.jpg", "picName": "Sivir"},
+                    {"picLocation": "/pic/16_Web_0.jpg", "picName": "Soraka"},
+                    {"picLocation": "/pic/17_Web_0.jpg", "picName": "Teemo"},
+                    {"picLocation": "/pic/18_Web_0.jpg", "picName": "Tristana"},
+                    {"picLocation": "/pic/19_Web_0.jpg", "picName": "Warwick"},
+                    {"picLocation": "/pic/20_Web_0.jpg", "picName": "Nunu"},
+                    {"picLocation": "/pic/21_Web_0.jpg", "picName": "Miss Fortune"},
+                    {"picLocation": "/pic/22_Web_0.jpg", "picName": "Ashe"},
+                    {"picLocation": "/pic/23_Web_0.jpg", "picName": "Tryndamere"},
+                    {"picLocation": "/pic/24_Web_0.jpg", "picName": "Jax"},
+                    {"picLocation": "/pic/101_Web_0.jpg", "picName": "Xerath"},
+                    {"picLocation": "/pic/102_Web_0.jpg", "picName": "Shyvana"},
+                    {"picLocation": "/pic/103_Web_0.jpg", "picName": "Ahri"},
+                    {"picLocation": "/pic/104_Web_0.jpg", "picName": "Fizz"},
+                    {"picLocation": "/pic/105_Web_0.jpg", "picName": "Volibear"},
+                    {"picLocation": "/pic/106_Web_0.jpg", "picName": "Rengar"},
+                    {"picLocation": "/pic/107_Web_0.jpg", "picName": "Varis"},
+                    {"picLocation": "/pic/108_Web_0.jpg", "picName": "Nautilus"},
+                    {"picLocation": "/pic/109_Web_0.jpg", "picName": "Victor"}
+                ];
+         
+            document.getElementById("0index").innerHTML = pictures[0].picLocation;
+            document.getElementById("01index").innerHTML = pictures[0].picName;
+            document.getElementById("changer").src=pictures[Math.floor((Math.random() * 33) + 1)].picLocation;
+            picture[0].picName;
+
+        </script>
+    </body>
+
+</html>
