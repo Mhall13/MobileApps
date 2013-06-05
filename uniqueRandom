@@ -1,5 +1,5 @@
 <script>var randomArr = [], trackingArr = [],
-    targetCount = 10, currentCount = 0,
+    targetCount = 20, currentCount = 0,
     min = 1, max = 30,
     rnd;
 
@@ -8,9 +8,15 @@ while (currentCount < targetCount) {
     if (!trackingArr[rnd]) {
         trackingArr[rnd] = rnd;
         randomArr[currentCount] = rnd;
-        currentCount += 1;
-    }
+    	randomArr[currentCount + 1] = rnd;
+        currentCount += 2;
+    }	
 }
-
+var i = randomArr.length;
+   while (--i) {
+      var j = Math.floor(Math.random() * (i + 1))
+      var temp = randomArr[i];
+      randomArr[i] = randomArr[j];
+      randomArr[j] = temp;}
 alert(randomArr);
 </script>
