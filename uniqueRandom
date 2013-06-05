@@ -1,0 +1,16 @@
+<script>var randomArr = [], trackingArr = [],
+    targetCount = 10, currentCount = 0,
+    min = 1, max = 30,
+    rnd;
+
+while (currentCount < targetCount) {
+    rnd = Math.floor(Math.random() * (max - min + 1)) + min;
+    if (!trackingArr[rnd]) {
+        trackingArr[rnd] = rnd;
+        randomArr[currentCount] = rnd;
+        currentCount += 1;
+    }
+}
+
+alert(randomArr);
+</script>
