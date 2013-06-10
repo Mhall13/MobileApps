@@ -1,0 +1,470 @@
+  <!DOCTYPE html>
+  <html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+    <!-- Enable responsive view on mobile devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name=”apple-mobile-web-app-capable” content=”YES”>
+
+    <title>Pure Percent Based Gallery</title>
+
+
+ <script>var randomArr = [], trackingArr = [],
+    targetCount = 20, currentCount = 0,
+    min = 1, max = 30,
+    rnd;
+
+while (currentCount < targetCount) {
+    rnd = Math.floor(Math.random() * (max - min + 1)) + min;
+    if (!trackingArr[rnd]) {
+        trackingArr[rnd] = rnd;
+        randomArr[currentCount] = rnd;
+      randomArr[currentCount + 1] = rnd;
+        currentCount += 2;
+    } 
+}
+var i = randomArr.length;
+   while (--i) {
+      var j = Math.floor(Math.random() * (i + 1))
+      var temp = randomArr[i];
+      randomArr[i] = randomArr[j];
+      randomArr[j] = temp;}
+</script>
+
+        <script>
+            var pictures = [
+                {"picLocation": "http://sandbox.chiapits.com/pic/g-rp.jpg", "picName": "Riot"},
+                {"picLocation": "http://sandbox.chiapits.com/pic/1_Web_0.jpg", "picName": "Annie"},
+                {"picLocation": "http://sandbox.chiapits.com/pic/2_Web_0.jpg", "picName": "Olaf"},
+                {"picLocation": "http://sandbox.chiapits.com/pic/3_Web_0.jpg", "picName": "Galio"},
+                {"picLocation": "http://sandbox.chiapits.com/pic/4_Web_0.jpg", "picName": "Twisted Fate"},
+                {"picLocation": "http://sandbox.chiapits.com/pic/5_Web_0.jpg", "picName": "Xin Zhao"},
+                {"picLocation": "http://sandbox.chiapits.com/pic/6_Web_0.jpg", "picName": "Urgot"},
+                {"picLocation": "http://sandbox.chiapits.com/pic/7_Web_0.jpg", "picName": "Le Blanc"},
+                {"picLocation": "http://sandbox.chiapits.com/pic/8_Web_0.jpg", "picName": "Vladimir"},
+                {"picLocation": "http://sandbox.chiapits.com/pic/9_Web_0.jpg", "picName": "Fiddlesticks"},
+                {"picLocation": "http://sandbox.chiapits.com/pic/10_Web_0.jpg", "picName": "Kayle"},
+                {"picLocation": "http://sandbox.chiapits.com/pic/11_Web_0.jpg", "picName": "Master Yi"},
+                {"picLocation": "http://sandbox.chiapits.com/pic/12_Web_0.jpg", "picName": "Alistar"},
+                {"picLocation": "http://sandbox.chiapits.com/pic/13_Web_0.jpg", "picName": "Ryze"},
+                {"picLocation": "http://sandbox.chiapits.com/pic/14_Web_0.jpg", "picName": "Sion"},
+                {"picLocation": "http://sandbox.chiapits.com/pic/15_Web_0.jpg", "picName": "Sivir"},
+                {"picLocation": "http://sandbox.chiapits.com/pic/16_Web_0.jpg", "picName": "Soraka"},
+                {"picLocation": "http://sandbox.chiapits.com/pic/17_Web_0.jpg", "picName": "Teemo"},
+                {"picLocation": "http://sandbox.chiapits.com/pic/18_Web_0.jpg", "picName": "Tristana"},
+                {"picLocation": "http://sandbox.chiapits.com/pic/19_Web_0.jpg", "picName": "Warwick"},
+                {"picLocation": "http://sandbox.chiapits.com/pic/20_Web_0.jpg", "picName": "Nunu"},
+                {"picLocation": "http://sandbox.chiapits.com/pic/21_Web_0.jpg", "picName": "Miss Fortune"},
+                {"picLocation": "http://sandbox.chiapits.com/pic/22_Web_0.jpg", "picName": "Ashe"},
+                {"picLocation": "http://sandbox.chiapits.com/pic/23_Web_0.jpg", "picName": "Tryndamere"},
+                {"picLocation": "http://sandbox.chiapits.com/pic/24_Web_0.jpg", "picName": "Jax"},
+                {"picLocation": "http://sandbox.chiapits.com/pic/101_Web_0.jpg", "picName": "Xerath"},
+                {"picLocation": "http://sandbox.chiapits.com/pic/102_Web_0.jpg", "picName": "Shyvana"},
+                {"picLocation": "http://sandbox.chiapits.com/pic/103_Web_0.jpg", "picName": "Ahri"},
+                {"picLocation": "http://sandbox.chiapits.com/pic/104_Web_0.jpg", "picName": "Fizz"},
+                {"picLocation": "http://sandbox.chiapits.com/pic/105_Web_0.jpg", "picName": "Volibear"},
+                {"picLocation": "http://sandbox.chiapits.com/pic/106_Web_0.jpg", "picName": "Rengar"},
+                {"picLocation": "http://sandbox.chiapits.com/pic/107_Web_0.jpg", "picName": "Varis"},
+                {"picLocation": "http://sandbox.chiapits.com/pic/110_Web_0.jpg", "picName": "Nautilus"}
+            ];
+            function getImages() {
+            for (i = 0; i < 20; i++) {
+                document.getElementById("changer".concat(i)).src = pictures[randomArr[i]].picLocation;
+               }
+               document.getElementsByClassName("f1_container").className = "f1_container";
+             }
+        </script>
+
+    <style type="text/css">
+    body {
+      margin: 0;
+      padding: 0;
+    }
+    .game {
+      overflow: hidden;
+      margin: 1%;
+    }
+    .f1_container {
+      float: left;
+      display:inline;
+      position: relative;
+    }
+
+      /* Portrait */
+@media screen and (orientation:portrait) {
+    .f1_container { 
+      width: 25%;
+      padding-bottom: 25%;
+    }
+    .game {
+      width: 90%;
+    }
+  }
+
+/* Landscape */
+@media screen and (orientation:landscape) {
+    .f1_container { 
+      width: 20%;
+      padding-bottom: 20%;
+    }
+    .game {
+      width: 60%;
+      margin: 0 auto;
+    }
+  }
+
+    .scale_box {
+      position: absolute;
+      margin: 4%;
+      left: 0%;
+      right: 0%;
+/*      top: 0%;
+      bottom: 0%;*/
+/*      overflow: hidden;*/
+    }
+
+    .scale_box img {
+      width: 100%;
+    }
+
+     .f1_container {
+        -webkit-perspective: 200;
+      } 
+
+      .f1_card {
+/*        width: 100%;
+        height: 100%;*/
+        -webkit-transform-style: preserve-3d;
+        -webkit-transition: all .3s linear;
+      }
+      .fliped .f1_card {
+        -webkit-transform: rotateY(180deg);
+        margin-left: 0px;
+      }
+      .face {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        -webkit-backface-visibility: hidden;
+      }
+      .face.back {
+        display: block;
+        -webkit-transform: rotateY(180deg);
+        -webkit-box-sizing: border-box;
+        color: white;
+        text-align: center;
+      }
+
+      </style>
+</head>
+
+<body onload="getImages()">
+  <input type="button" value="New Game" onclick="getImages()">
+
+  <div class="game">
+
+    <!-- Define all of the tiles: -->
+    <div class="f1_container" onClick="flip(this)">
+        <div class="scale_box">
+            <div class="f1_card">
+                <div class="front face">
+                    <img src="http://sandbox.chiapits.com/pic/g-rp.jpg" class="backside_img">
+                </div>
+                <div class="back face center">  
+                    <img src="http://sandbox.chiapits.com/pic/g-rp.jpg" id="changer0">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="f1_container" onClick="flip(this)">
+        <div class="scale_box">
+            <div class="f1_card">
+                <div class="front face">
+                    <img src="http://sandbox.chiapits.com/pic/g-rp.jpg" class="backside_img">
+                </div>
+                <div class="back face center">  
+                    <img src="http://sandbox.chiapits.com/pic/g-rp.jpg" id="changer1">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="f1_container" onClick="flip(this)">
+        <div class="scale_box">
+            <div class="f1_card">
+                <div class="front face">
+                    <img src="http://sandbox.chiapits.com/pic/g-rp.jpg" class="backside_img">
+                </div>
+                <div class="back face center">  
+                    <img src="http://sandbox.chiapits.com/pic/g-rp.jpg" id="changer2">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="f1_container" onClick="flip(this)">
+        <div class="scale_box">
+            <div class="f1_card">
+                <div class="front face">
+                    <img src="http://sandbox.chiapits.com/pic/g-rp.jpg" class="backside_img">
+                </div>
+                <div class="back face center">  
+                    <img src="http://sandbox.chiapits.com/pic/g-rp.jpg" id="changer3">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="f1_container" onClick="flip(this)">
+        <div class="scale_box">
+            <div class="f1_card">
+                <div class="front face">
+                    <img src="http://sandbox.chiapits.com/pic/g-rp.jpg" class="backside_img">
+                </div>
+                <div class="back face center">  
+                    <img src="http://sandbox.chiapits.com/pic/g-rp.jpg" id="changer4">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="f1_container" onClick="flip(this)">
+        <div class="scale_box">
+            <div class="f1_card">
+                <div class="front face">
+                    <img src="http://sandbox.chiapits.com/pic/g-rp.jpg" class="backside_img">
+                </div>
+                <div class="back face center">  
+                    <img src="http://sandbox.chiapits.com/pic/g-rp.jpg" id="changer5">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="f1_container" onClick="flip(this)">
+        <div class="scale_box">
+            <div class="f1_card">
+                <div class="front face">
+                    <img src="http://sandbox.chiapits.com/pic/g-rp.jpg" class="backside_img">
+                </div>
+                <div class="back face center">  
+                    <img src="http://sandbox.chiapits.com/pic/g-rp.jpg" id="changer6">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="f1_container" onClick="flip(this)">
+        <div class="scale_box">
+            <div class="f1_card">
+                <div class="front face">
+                    <img src="http://sandbox.chiapits.com/pic/g-rp.jpg" class="backside_img">
+                </div>
+                <div class="back face center">  
+                    <img src="http://sandbox.chiapits.com/pic/g-rp.jpg" id="changer7">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="f1_container" onClick="flip(this)">
+        <div class="scale_box">
+            <div class="f1_card">
+                <div class="front face">
+                    <img src="http://sandbox.chiapits.com/pic/g-rp.jpg" class="backside_img">
+                </div>
+                <div class="back face center">  
+                    <img src="http://sandbox.chiapits.com/pic/g-rp.jpg" id="changer8">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="f1_container" onClick="flip(this)">
+        <div class="scale_box">
+            <div class="f1_card">
+                <div class="front face">
+                    <img src="http://sandbox.chiapits.com/pic/g-rp.jpg" class="backside_img">
+                </div>
+                <div class="back face center">  
+                    <img src="http://sandbox.chiapits.com/pic/g-rp.jpg" id="changer9">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="f1_container" onClick="flip(this)">
+        <div class="scale_box">
+            <div class="f1_card">
+                <div class="front face">
+                    <img src="http://sandbox.chiapits.com/pic/g-rp.jpg" class="backside_img">
+                </div>
+                <div class="back face center">  
+                    <img src="http://sandbox.chiapits.com/pic/g-rp.jpg" id="changer10">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="f1_container" onClick="flip(this)">
+        <div class="scale_box">
+            <div class="f1_card">
+                <div class="front face">
+                    <img src="http://sandbox.chiapits.com/pic/g-rp.jpg" class="backside_img">
+                </div>
+                <div class="back face center">  
+                    <img src="http://sandbox.chiapits.com/pic/g-rp.jpg" id="changer11">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="f1_container" onClick="flip(this)">
+        <div class="scale_box">
+            <div class="f1_card">
+                <div class="front face">
+                    <img src="http://sandbox.chiapits.com/pic/g-rp.jpg" class="backside_img">
+                </div>
+                <div class="back face center">  
+                    <img src="http://sandbox.chiapits.com/pic/g-rp.jpg" id="changer12">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="f1_container" onClick="flip(this)">
+        <div class="scale_box">
+            <div class="f1_card">
+                <div class="front face">
+                    <img src="http://sandbox.chiapits.com/pic/g-rp.jpg" class="backside_img">
+                </div>
+                <div class="back face center">  
+                    <img src="http://sandbox.chiapits.com/pic/g-rp.jpg" id="changer13">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="f1_container" onClick="flip(this)">
+        <div class="scale_box">
+            <div class="f1_card">
+                <div class="front face">
+                    <img src="http://sandbox.chiapits.com/pic/g-rp.jpg" class="backside_img">
+                </div>
+                <div class="back face center">  
+                    <img src="http://sandbox.chiapits.com/pic/g-rp.jpg" id="changer14">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="f1_container" onClick="flip(this)">
+        <div class="scale_box">
+            <div class="f1_card">
+                <div class="front face">
+                    <img src="http://sandbox.chiapits.com/pic/g-rp.jpg" class="backside_img">
+                </div>
+                <div class="back face center">  
+                    <img src="http://sandbox.chiapits.com/pic/g-rp.jpg" id="changer15">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="f1_container" onClick="flip(this)">
+        <div class="scale_box">
+            <div class="f1_card">
+                <div class="front face">
+                    <img src="http://sandbox.chiapits.com/pic/g-rp.jpg" class="backside_img">
+                </div>
+                <div class="back face center">  
+                    <img src="http://sandbox.chiapits.com/pic/g-rp.jpg" id="changer16">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="f1_container" onClick="flip(this)">
+        <div class="scale_box">
+            <div class="f1_card">
+                <div class="front face">
+                    <img src="http://sandbox.chiapits.com/pic/g-rp.jpg" class="backside_img">
+                </div>
+                <div class="back face center">  
+                    <img src="http://sandbox.chiapits.com/pic/g-rp.jpg" id="changer17">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="f1_container" onClick="flip(this)">
+        <div class="scale_box">
+            <div class="f1_card">
+                <div class="front face">
+                    <img src="http://sandbox.chiapits.com/pic/g-rp.jpg" class="backside_img">
+                </div>
+                <div class="back face center">  
+                    <img src="http://sandbox.chiapits.com/pic/g-rp.jpg" id="changer18">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="f1_container" onClick="flip(this)">
+        <div class="scale_box">
+            <div class="f1_card">
+                <div class="front face">
+                    <img src="http://sandbox.chiapits.com/pic/g-rp.jpg" class="backside_img">
+                </div>
+                <div class="back face center">  
+                    <img src="http://sandbox.chiapits.com/pic/g-rp.jpg" id="changer19">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+  </div>
+  <!-- /#game -->
+  
+  <script type="text/javascript">
+  function flip(card){
+    if(card.className == "f1_container")
+     card.className += " fliped";
+   else
+    card.className = "f1_container";
+}
+
+/*  HIDE ADDRESS BAR  */
+$('.game').masonry({ isFitWidth: true });
+
+    function hideAddressBar()
+      {
+          if(!window.location.hash)
+          { 
+              if(document.height <= window.outerHeight + 10)
+              {
+                  document.body.style.height = (window.outerHeight + 50) +'px';
+                  setTimeout( function(){ window.scrollTo(0, 1); }, 50 );
+              }
+              else
+              {
+                  setTimeout( function(){ window.scrollTo(0, 1); }, 0 ); 
+              }
+          }
+      } 
+
+      window.addEventListener("load", hideAddressBar );
+      window.addEventListener("orientationchange", hideAddressBar ); 
+      
+  </script>
+  <!-- 
+  document.write("Last Updated: "+ timeStamp);   
+  -->
+      </body>
+      </html>
+
+
+
+
