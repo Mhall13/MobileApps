@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
     <head>
@@ -31,7 +30,7 @@
         <?php include 'randomizer.php' ?>
         <script>
             var pictures = [
-                {"picLocation": "/pic/g-rp.jpg", "picName": "Riot"},
+                {"picLocation": "http://sandbox.chiapits.com/pic/g-rp.jpg", "picName": "Riot"},
                 {"picLocation": "/pic/1_Web_0.jpg", "picName": "Annie"},
                 {"picLocation": "/pic/2_Web_0.jpg", "picName": "Olaf"},
                 {"picLocation": "/pic/3_Web_0.jpg", "picName": "Galio"},
