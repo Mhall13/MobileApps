@@ -1,4 +1,3 @@
-
 /* ------------ RESET IMAGES ------------  */         
             function getImages(x) {
               var revert = document.getElementsByClassName("f1_container fliped");
@@ -61,7 +60,7 @@
 /* ------------ FLIP FUNCTIONALITY ------------  */
         function flip(card){
         // logic(card) 
-    window.alert(card);
+    window.alert(card.getElementsByClassName("back face center").src);
     if(card.className == "f1_container")
      card.className += " fliped";
    else
