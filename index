@@ -1,0 +1,292 @@
+  <!DOCTYPE html>
+  <html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+    <!-- Enable responsive view on mobile devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name=”apple-mobile-web-app-capable” content=”YES”>
+
+    <title>Card Flip</title>
+<!-- CSS Styles -->
+<link rel="stylesheet" href="style.css" />
+
+<!-- Javascript -->
+<script type="text/javascript" src="main.js"></script>
+</head>
+
+<body onload="getImages(0)">
+  <input type="button" value="New Game" onclick="getImages(500)">
+  <input type="button" value="Show All" onclick="testFlipAll()">
+
+  <div class="game">
+
+    <!-- Define all of the tiles: -->
+    <div class="f1_container" onClick="flip(this)">
+        <div class="scale_box">
+            <div class="f1_card">
+                <div class="front face">
+                    <img src="http://mattspencer.info/test/pic/g-rp.jpg" class="backside_img">
+                </div>
+                <div class="back face center">  
+                    <img src="http://mattspencer.info/test/pic/g-rp.jpg" id="changer0">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="f1_container" onClick="flip(this)">
+        <div class="scale_box">
+            <div class="f1_card">
+                <div class="front face">
+                    <img src="http://mattspencer.info/test/pic/g-rp.jpg" class="backside_img">
+                </div>
+                <div class="back face center">  
+                    <img src="http://mattspencer.info/test/pic/g-rp.jpg" id="changer1">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="f1_container" onClick="flip(this)">
+        <div class="scale_box">
+            <div class="f1_card">
+                <div class="front face">
+                    <img src="http://mattspencer.info/test/pic/g-rp.jpg" class="backside_img">
+                </div>
+                <div class="back face center">  
+                    <img src="http://mattspencer.info/test/pic/g-rp.jpg" id="changer2">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="f1_container" onClick="flip(this)">
+        <div class="scale_box">
+            <div class="f1_card">
+                <div class="front face">
+                    <img src="http://mattspencer.info/test/pic/g-rp.jpg" class="backside_img">
+                </div>
+                <div class="back face center">  
+                    <img src="http://mattspencer.info/test/pic/g-rp.jpg" id="changer3">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="f1_container" onClick="flip(this)">
+        <div class="scale_box">
+            <div class="f1_card">
+                <div class="front face">
+                    <img src="http://mattspencer.info/test/pic/g-rp.jpg" class="backside_img">
+                </div>
+                <div class="back face center">  
+                    <img src="http://mattspencer.info/test/pic/g-rp.jpg" id="changer4">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="f1_container" onClick="flip(this)">
+        <div class="scale_box">
+            <div class="f1_card">
+                <div class="front face">
+                    <img src="http://mattspencer.info/test/pic/g-rp.jpg" class="backside_img">
+                </div>
+                <div class="back face center">  
+                    <img src="http://mattspencer.info/test/pic/g-rp.jpg" id="changer5">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="f1_container" onClick="flip(this)">
+        <div class="scale_box">
+            <div class="f1_card">
+                <div class="front face">
+                    <img src="http://mattspencer.info/test/pic/g-rp.jpg" class="backside_img">
+                </div>
+                <div class="back face center">  
+                    <img src="http://mattspencer.info/test/pic/g-rp.jpg" id="changer6">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="f1_container" onClick="flip(this)">
+        <div class="scale_box">
+            <div class="f1_card">
+                <div class="front face">
+                    <img src="http://mattspencer.info/test/pic/g-rp.jpg" class="backside_img">
+                </div>
+                <div class="back face center">  
+                    <img src="http://mattspencer.info/test/pic/g-rp.jpg" id="changer7">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="f1_container" onClick="flip(this)">
+        <div class="scale_box">
+            <div class="f1_card">
+                <div class="front face">
+                    <img src="http://mattspencer.info/test/pic/g-rp.jpg" class="backside_img">
+                </div>
+                <div class="back face center">  
+                    <img src="http://mattspencer.info/test/pic/g-rp.jpg" id="changer8">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="f1_container" onClick="flip(this)">
+        <div class="scale_box">
+            <div class="f1_card">
+                <div class="front face">
+                    <img src="http://mattspencer.info/test/pic/g-rp.jpg" class="backside_img">
+                </div>
+                <div class="back face center">  
+                    <img src="http://mattspencer.info/test/pic/g-rp.jpg" id="changer9">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="f1_container" onClick="flip(this)">
+        <div class="scale_box">
+            <div class="f1_card">
+                <div class="front face">
+                    <img src="http://mattspencer.info/test/pic/g-rp.jpg" class="backside_img">
+                </div>
+                <div class="back face center">  
+                    <img src="http://mattspencer.info/test/pic/g-rp.jpg" id="changer10">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="f1_container" onClick="flip(this)">
+        <div class="scale_box">
+            <div class="f1_card">
+                <div class="front face">
+                    <img src="http://mattspencer.info/test/pic/g-rp.jpg" class="backside_img">
+                </div>
+                <div class="back face center">  
+                    <img src="http://mattspencer.info/test/pic/g-rp.jpg" id="changer11">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="f1_container" onClick="flip(this)">
+        <div class="scale_box">
+            <div class="f1_card">
+                <div class="front face">
+                    <img src="http://mattspencer.info/test/pic/g-rp.jpg" class="backside_img">
+                </div>
+                <div class="back face center">  
+                    <img src="http://mattspencer.info/test/pic/g-rp.jpg" id="changer12">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="f1_container" onClick="flip(this)">
+        <div class="scale_box">
+            <div class="f1_card">
+                <div class="front face">
+                    <img src="http://mattspencer.info/test/pic/g-rp.jpg" class="backside_img">
+                </div>
+                <div class="back face center">  
+                    <img src="http://mattspencer.info/test/pic/g-rp.jpg" id="changer13">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="f1_container" onClick="flip(this)">
+        <div class="scale_box">
+            <div class="f1_card">
+                <div class="front face">
+                    <img src="http://mattspencer.info/test/pic/g-rp.jpg" class="backside_img">
+                </div>
+                <div class="back face center">  
+                    <img src="http://mattspencer.info/test/pic/g-rp.jpg" id="changer14">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="f1_container" onClick="flip(this)">
+        <div class="scale_box">
+            <div class="f1_card">
+                <div class="front face">
+                    <img src="http://mattspencer.info/test/pic/g-rp.jpg" class="backside_img">
+                </div>
+                <div class="back face center">  
+                    <img src="http://mattspencer.info/test/pic/g-rp.jpg" id="changer15">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="f1_container" onClick="flip(this)">
+        <div class="scale_box">
+            <div class="f1_card">
+                <div class="front face">
+                    <img src="http://mattspencer.info/test/pic/g-rp.jpg" class="backside_img">
+                </div>
+                <div class="back face center">  
+                    <img src="http://mattspencer.info/test/pic/g-rp.jpg" id="changer16">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="f1_container" onClick="flip(this)">
+        <div class="scale_box">
+            <div class="f1_card">
+                <div class="front face">
+                    <img src="http://mattspencer.info/test/pic/g-rp.jpg" class="backside_img">
+                </div>
+                <div class="back face center">  
+                    <img src="http://mattspencer.info/test/pic/g-rp.jpg" id="changer17">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="f1_container" onClick="flip(this)">
+        <div class="scale_box">
+            <div class="f1_card">
+                <div class="front face">
+                    <img src="http://mattspencer.info/test/pic/g-rp.jpg" class="backside_img">
+                </div>
+                <div class="back face center">  
+                    <img src="http://mattspencer.info/test/pic/g-rp.jpg" id="changer18">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="f1_container" onClick="flip(this)">
+        <div class="scale_box">
+            <div class="f1_card">
+                <div class="front face">
+                    <img src="http://mattspencer.info/test/pic/g-rp.jpg" class="backside_img">
+                </div>
+                <div class="back face center">  
+                    <img src="http://mattspencer.info/test/pic/g-rp.jpg" id="changer19">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+  </div>
+  <!-- /#game -->
+  
+  <!-- 
+  document.write("Last Updated: "+ timeStamp);   
+  -->
+      </body>
+      </html>
