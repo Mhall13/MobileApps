@@ -10,7 +10,7 @@
               function delay(){
               var randomArr = [], trackingArr = [],
               targetCount = 20, currentCount = 0,
-              min = 1, max = 30,
+              min = 1, max = 112,
               rnd;
 
               while (currentCount < targetCount) {
@@ -33,38 +33,75 @@
                }
                }
              }
+/* ------------ LOGIC ------------  */
+var container1="";
+var container2="";
+var url1;
+var url2;
+var count = 0;
+var score = 0;
+
+function logic(card){
+count++  
+if (count == 1) {
+  url1 = card.getElementsByTagName("img")[1].getAttribute("src");
+  container1 = card.getAttribute("id");
+}
+if (count == 2) {
+  url2 = card.getElementsByTagName("img")[1].getAttribute("src");
+  container2 = card.getAttribute("id");
+  if (url1 == url2) {
+    score++
+    card1 = 0;
+    card2 = 0;
+    count = 0;
+
+  } else {
+    setTimeout(delay, 500);
+    function delay() {
+    document.getElementById(container1).className="f1_container";
+    document.getElementById(container2).className="f1_container";
+    card1 = 0;
+    card2 = 0;
+    count = 0;
+    }
+  }
+ }
+}
 /* ------------ FLIP COUNT ------------  */
-        var card1 = 0;
-        var card2 = 0;
-        var score = 0;
-        var logicCount = 0;
-      function logic(x){
-        logicCount++;
-          "card" + logicCount = x;
-          if(card1 != 0){
-            if(card2 != 0){
-              if(card1 == card2){
-                score++;
-              }
-              else{
-            card1.className = "f1_container"
-            card2.className = "f1_container"
-            card1 = 0;
-            card2 = 0;
-            logicCount = 0;
-            }
-          }
-      }
+      //   var card1 = 0;
+      //   var card2 = 0;
+      //   var score = 0;
+      //   var logicCount = 0;
+      // function logic(x){
+      //   logicCount++;
+      //     "card" + logicCount = x;
+      //     if(card1 != 0){
+      //       if(card2 != 0){
+      //         if(card1 == card2){
+      //           score++;
+      //         }
+      //         else{
+      //       card1.className = "f1_container"
+      //       card2.className = "f1_container"
+      //       card1 = 0;
+      //       card2 = 0;
+      //       logicCount = 0;
+      //       }
+      //     }
+      // }
 
 
 /* ------------ FLIP FUNCTIONALITY ------------  */
         function flip(card){
         // logic(card) 
-    window.alert(card.getElementsByClassName("back face center").src);
-    if(card.className == "f1_container")
+    // window.alert(card.getElementsByTagName("img")[1].getAttribute("src"));
+    if(card.className == "f1_container"){
      card.className += " fliped";
-   else
-    card.className = "f1_container";
+     logic(card);
+   }
+//    else
+//     card.className = "f1_container";
 }
 
 /* ------------ Test Flip All ------------  */
@@ -197,7 +234,7 @@
   
 
 /* ------------ HIDE ADDRESS BAR ------------  */
-$('.game').masonry({ isFitWidth: true });
+('.game').masonry({ isFitWidth: true });
 
     function hideAddressBar()
       {
@@ -217,3 +254,28 @@ $('.game').masonry({ isFitWidth: true });
 
       window.addEventListener("load", hideAddressBar );
       window.addEventListener("orientationchange", hideAddressBar );
+
+/* ------------ HIDE BUTTONS ------------  */
+function hideButtons() {
+  document.getElementById("menu").style.display="none";
+}
+
+function showButtons() {
+  document.getElementById("menu").style.display="block";
+}
+
+function hideGame() {
+  document.getElementById("game").style.display="none";
+}
+
+function showGame() {
+  document.getElementById("game").style.display="block";
+}
+
+function hideStuff(game){
+   document.getElementById("game").style.visibility="hidden";
+}
+
+
+
+
