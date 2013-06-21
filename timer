@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+var time = 0
+function Time()
+{
+time++
+document.getElementById('txt').innerHTML=time
+setTimeout(function(){Time()},1000);
+}
+
+</script>
+</head>
+
+<body onload="Time()">
+<p>Time: <div id="txt">0</div></p>
+
+</body>
+</html>
