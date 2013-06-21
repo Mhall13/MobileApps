@@ -15,280 +15,284 @@
     <script type="text/javascript" src="main.js"></script>
 </head>
 
-<body onload="getImages(0)">
-    <div id="menu">
-      <input type="button" value="New Game" onclick="getImages(500)">
-      <input type="button" value="Show All" onclick="testFlipAll()">
+<body onload="start()">
+    <div id="mainmenu">
+        <input type="button" value="New Game" onclick="newGame(500)">
+        <input type="button" value="Show All" onclick="testFlipAll()">
   
-  <input type="button" value="Hide Buttons" onclick="hideButtons()" value="Hide buttons with display-none property"> 
-  <input type="button" value="Show Buttons" onclick="showButtons()" value="Hide buttons with display-none property">
-   <input type="button" value="Hide Game" onclick="hideGame()" value="Hide buttons with display-none property">
-    <input type="button" value="Show Game" onclick="showGame()" value="Hide buttons with display-none property">
-</div>
-  <div id="game">
+        <input type="button" value="Hide Buttons" onclick="hideButtons()"> 
+        <input type="button" value="Show Buttons" onclick="showButtons()">
+        <input type="button" value="Hide Game" onclick="hideGame()">
+        <input type="button" value="Show Game" onclick="showGame()">
+    </div>
+  
+    <div id="game">
 
-    <!-- Define all of the tiles: -->
-    <div class="f1_container" id="container1" onClick="flip(this)">
-        <div class="scale_box">
-            <div class="f1_card">
-                <div class="front face">
-                    <img src="/test/pic/g-rp.jpg" class="backside_img">
-                </div>
-                <div class="back face center">  
-                    <img src="/test/pic/g-rp.jpg" id="changer0">
+        <!-- Define all of the tiles: -->
+        <div class="f1_container" id="container1" onClick="flip(this)">
+            <div class="scale_box">
+                <div class="f1_card">
+                    <div class="front face">
+                        <img src="/test/pic/g-rp.jpg" class="backside_img">
+                    </div>
+                    <div class="back face center">  
+                        <img src="/test/pic/g-rp.jpg" id="changer0">
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <div class="f1_container" id="container2" onClick="flip(this)">
-        <div class="scale_box">
-            <div class="f1_card">
-                <div class="front face">
-                    <img src="/test/pic/g-rp.jpg" class="backside_img">
-                </div>
-                <div class="back face center">  
-                    <img src="/test/pic/g-rp.jpg" id="changer1">
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <div class="f1_container" id="container3" onClick="flip(this)">
-        <div class="scale_box">
-            <div class="f1_card">
-                <div class="front face">
-                    <img src="/test/pic/g-rp.jpg" class="backside_img">
-                </div>
-                <div class="back face center">  
-                    <img src="/test/pic/g-rp.jpg" id="changer2">
+        <div class="f1_container" id="container2" onClick="flip(this)">
+            <div class="scale_box">
+                <div class="f1_card">
+                    <div class="front face">
+                        <img src="/test/pic/g-rp.jpg" class="backside_img">
+                    </div>
+                    <div class="back face center">  
+                        <img src="/test/pic/g-rp.jpg" id="changer1">
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    
-    <div class="f1_container" id="container4" onClick="flip(this)">
-        <div class="scale_box">
-            <div class="f1_card">
-                <div class="front face">
-                    <img src="/test/pic/g-rp.jpg" class="backside_img">
-                </div>
-                <div class="back face center">  
-                    <img src="/test/pic/g-rp.jpg" id="changer3">
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <div class="f1_container" id="container5" onClick="flip(this)">
-        <div class="scale_box">
-            <div class="f1_card">
-                <div class="front face">
-                    <img src="/test/pic/g-rp.jpg" class="backside_img">
-                </div>
-                <div class="back face center">  
-                    <img src="/test/pic/g-rp.jpg" id="changer4">
+        
+        <div class="f1_container" id="container3" onClick="flip(this)">
+            <div class="scale_box">
+                <div class="f1_card">
+                    <div class="front face">
+                        <img src="/test/pic/g-rp.jpg" class="backside_img">
+                    </div>
+                    <div class="back face center">  
+                        <img src="/test/pic/g-rp.jpg" id="changer2">
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    
-    <div class="f1_container" id="container6" onClick="flip(this)">
-        <div class="scale_box">
-            <div class="f1_card">
-                <div class="front face">
-                    <img src="/test/pic/g-rp.jpg" class="backside_img">
-                </div>
-                <div class="back face center">  
-                    <img src="/test/pic/g-rp.jpg" id="changer5">
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <div class="f1_container" id="container7" onClick="flip(this)">
-        <div class="scale_box">
-            <div class="f1_card">
-                <div class="front face">
-                    <img src="/test/pic/g-rp.jpg" class="backside_img">
-                </div>
-                <div class="back face center">  
-                    <img src="/test/pic/g-rp.jpg" id="changer6">
+        
+        <div class="f1_container" id="container4" onClick="flip(this)">
+            <div class="scale_box">
+                <div class="f1_card">
+                    <div class="front face">
+                        <img src="/test/pic/g-rp.jpg" class="backside_img">
+                    </div>
+                    <div class="back face center">  
+                        <img src="/test/pic/g-rp.jpg" id="changer3">
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    
-    <div class="f1_container" id="container8" onClick="flip(this)">
-        <div class="scale_box">
-            <div class="f1_card">
-                <div class="front face">
-                    <img src="/test/pic/g-rp.jpg" class="backside_img">
-                </div>
-                <div class="back face center">  
-                    <img src="/test/pic/g-rp.jpg" id="changer7">
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <div class="f1_container" id="container9" onClick="flip(this)">
-        <div class="scale_box">
-            <div class="f1_card">
-                <div class="front face">
-                    <img src="/test/pic/g-rp.jpg" class="backside_img">
-                </div>
-                <div class="back face center">  
-                    <img src="/test/pic/g-rp.jpg" id="changer8">
+        
+        <div class="f1_container" id="container5" onClick="flip(this)">
+            <div class="scale_box">
+                <div class="f1_card">
+                    <div class="front face">
+                        <img src="/test/pic/g-rp.jpg" class="backside_img">
+                    </div>
+                    <div class="back face center">  
+                        <img src="/test/pic/g-rp.jpg" id="changer4">
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    
-    <div class="f1_container" id="container10" onClick="flip(this)">
-        <div class="scale_box">
-            <div class="f1_card">
-                <div class="front face">
-                    <img src="/test/pic/g-rp.jpg" class="backside_img">
-                </div>
-                <div class="back face center">  
-                    <img src="/test/pic/g-rp.jpg" id="changer9">
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <div class="f1_container" id="container11" onClick="flip(this)">
-        <div class="scale_box">
-            <div class="f1_card">
-                <div class="front face">
-                    <img src="/test/pic/g-rp.jpg" class="backside_img">
-                </div>
-                <div class="back face center">  
-                    <img src="/test/pic/g-rp.jpg" id="changer10">
+        
+        <div class="f1_container" id="container6" onClick="flip(this)">
+            <div class="scale_box">
+                <div class="f1_card">
+                    <div class="front face">
+                        <img src="/test/pic/g-rp.jpg" class="backside_img">
+                    </div>
+                    <div class="back face center">  
+                        <img src="/test/pic/g-rp.jpg" id="changer5">
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    
-    <div class="f1_container" id="container12" onClick="flip(this)">
-        <div class="scale_box">
-            <div class="f1_card">
-                <div class="front face">
-                    <img src="/test/pic/g-rp.jpg" class="backside_img">
-                </div>
-                <div class="back face center">  
-                    <img src="/test/pic/g-rp.jpg" id="changer11">
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <div class="f1_container" id="container13" onClick="flip(this)">
-        <div class="scale_box">
-            <div class="f1_card">
-                <div class="front face">
-                    <img src="/test/pic/g-rp.jpg" class="backside_img">
-                </div>
-                <div class="back face center">  
-                    <img src="/test/pic/g-rp.jpg" id="changer12">
+        
+        <div class="f1_container" id="container7" onClick="flip(this)">
+            <div class="scale_box">
+                <div class="f1_card">
+                    <div class="front face">
+                        <img src="/test/pic/g-rp.jpg" class="backside_img">
+                    </div>
+                    <div class="back face center">  
+                        <img src="/test/pic/g-rp.jpg" id="changer6">
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    
-    <div class="f1_container" id="container14" onClick="flip(this)">
-        <div class="scale_box">
-            <div class="f1_card">
-                <div class="front face">
-                    <img src="/test/pic/g-rp.jpg" class="backside_img">
-                </div>
-                <div class="back face center">  
-                    <img src="/test/pic/g-rp.jpg" id="changer13">
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <div class="f1_container" id="container15" onClick="flip(this)">
-        <div class="scale_box">
-            <div class="f1_card">
-                <div class="front face">
-                    <img src="/test/pic/g-rp.jpg" class="backside_img">
-                </div>
-                <div class="back face center">  
-                    <img src="/test/pic/g-rp.jpg" id="changer14">
+        
+        <div class="f1_container" id="container8" onClick="flip(this)">
+            <div class="scale_box">
+                <div class="f1_card">
+                    <div class="front face">
+                        <img src="/test/pic/g-rp.jpg" class="backside_img">
+                    </div>
+                    <div class="back face center">  
+                        <img src="/test/pic/g-rp.jpg" id="changer7">
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    
-    <div class="f1_container" id="container16" onClick="flip(this)">
-        <div class="scale_box">
-            <div class="f1_card">
-                <div class="front face">
-                    <img src="/test/pic/g-rp.jpg" class="backside_img">
-                </div>
-                <div class="back face center">  
-                    <img src="/test/pic/g-rp.jpg" id="changer15">
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <div class="f1_container" id="container17" onClick="flip(this)">
-        <div class="scale_box">
-            <div class="f1_card">
-                <div class="front face">
-                    <img src="/test/pic/g-rp.jpg" class="backside_img">
-                </div>
-                <div class="back face center">  
-                    <img src="/test/pic/g-rp.jpg" id="changer16">
+        
+        <div class="f1_container" id="container9" onClick="flip(this)">
+            <div class="scale_box">
+                <div class="f1_card">
+                    <div class="front face">
+                        <img src="/test/pic/g-rp.jpg" class="backside_img">
+                    </div>
+                    <div class="back face center">  
+                        <img src="/test/pic/g-rp.jpg" id="changer8">
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    
-    <div class="f1_container" id="container18" onClick="flip(this)">
-        <div class="scale_box">
-            <div class="f1_card">
-                <div class="front face">
-                    <img src="/test/pic/g-rp.jpg" class="backside_img">
-                </div>
-                <div class="back face center">  
-                    <img src="/test/pic/g-rp.jpg" id="changer17">
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <div class="f1_container" id="container19" onClick="flip(this)">
-        <div class="scale_box">
-            <div class="f1_card">
-                <div class="front face">
-                    <img src="/test/pic/g-rp.jpg" class="backside_img">
-                </div>
-                <div class="back face center">  
-                    <img src="/test/pic/g-rp.jpg" id="changer18">
+        
+        <div class="f1_container" id="container10" onClick="flip(this)">
+            <div class="scale_box">
+                <div class="f1_card">
+                    <div class="front face">
+                        <img src="/test/pic/g-rp.jpg" class="backside_img">
+                    </div>
+                    <div class="back face center">  
+                        <img src="/test/pic/g-rp.jpg" id="changer9">
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    
-    <div class="f1_container" id="container20" onClick="flip(this)">
-        <div class="scale_box">
-            <div class="f1_card">
-                <div class="front face">
-                    <img src="/test/pic/g-rp.jpg" class="backside_img">
-                </div>
-                <div class="back face center">  
-                    <img src="/test/pic/g-rp.jpg" id="changer19">
+        
+        <div class="f1_container" id="container11" onClick="flip(this)">
+            <div class="scale_box">
+                <div class="f1_card">
+                    <div class="front face">
+                        <img src="/test/pic/g-rp.jpg" class="backside_img">
+                    </div>
+                    <div class="back face center">  
+                        <img src="/test/pic/g-rp.jpg" id="changer10">
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+        
+        <div class="f1_container" id="container12" onClick="flip(this)">
+            <div class="scale_box">
+                <div class="f1_card">
+                    <div class="front face">
+                        <img src="/test/pic/g-rp.jpg" class="backside_img">
+                    </div>
+                    <div class="back face center">  
+                        <img src="/test/pic/g-rp.jpg" id="changer11">
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="f1_container" id="container13" onClick="flip(this)">
+            <div class="scale_box">
+                <div class="f1_card">
+                    <div class="front face">
+                        <img src="/test/pic/g-rp.jpg" class="backside_img">
+                    </div>
+                    <div class="back face center">  
+                        <img src="/test/pic/g-rp.jpg" id="changer12">
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="f1_container" id="container14" onClick="flip(this)">
+            <div class="scale_box">
+                <div class="f1_card">
+                    <div class="front face">
+                        <img src="/test/pic/g-rp.jpg" class="backside_img">
+                    </div>
+                    <div class="back face center">  
+                        <img src="/test/pic/g-rp.jpg" id="changer13">
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="f1_container" id="container15" onClick="flip(this)">
+            <div class="scale_box">
+                <div class="f1_card">
+                    <div class="front face">
+                        <img src="/test/pic/g-rp.jpg" class="backside_img">
+                    </div>
+                    <div class="back face center">  
+                        <img src="/test/pic/g-rp.jpg" id="changer14">
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="f1_container" id="container16" onClick="flip(this)">
+            <div class="scale_box">
+                <div class="f1_card">
+                    <div class="front face">
+                        <img src="/test/pic/g-rp.jpg" class="backside_img">
+                    </div>
+                    <div class="back face center">  
+                        <img src="/test/pic/g-rp.jpg" id="changer15">
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="f1_container" id="container17" onClick="flip(this)">
+            <div class="scale_box">
+                <div class="f1_card">
+                    <div class="front face">
+                        <img src="/test/pic/g-rp.jpg" class="backside_img">
+                    </div>
+                    <div class="back face center">  
+                        <img src="/test/pic/g-rp.jpg" id="changer16">
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="f1_container" id="container18" onClick="flip(this)">
+            <div class="scale_box">
+                <div class="f1_card">
+                    <div class="front face">
+                        <img src="/test/pic/g-rp.jpg" class="backside_img">
+                    </div>
+                    <div class="back face center">  
+                        <img src="/test/pic/g-rp.jpg" id="changer17">
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="f1_container" id="container19" onClick="flip(this)">
+            <div class="scale_box">
+                <div class="f1_card">
+                    <div class="front face">
+                        <img src="/test/pic/g-rp.jpg" class="backside_img">
+                    </div>
+                    <div class="back face center">  
+                        <img src="/test/pic/g-rp.jpg" id="changer18">
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="f1_container" id="container20" onClick="flip(this)">
+            <div class="scale_box">
+                <div class="f1_card">
+                    <div class="front face">
+                        <img src="/test/pic/g-rp.jpg" class="backside_img">
+                    </div>
+                    <div class="back face center">  
+                        <img src="/test/pic/g-rp.jpg" id="changer19">
+                    </div>
+                </div>
+            </div>
+        </div>
     
-</div>
-<!-- /#game -->
+    </div><!-- /#game -->
+    <div>
+        <span>Score: </span><span id="score">0</span>
+        <span>Time: </span><span id="time">0</span>
+    </div>
 </body>
 </html>
