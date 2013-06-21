@@ -1,46 +1,52 @@
-/* ------------ RESET IMAGES ------------  */         
-            function getImages(x) {
-              var revert = document.getElementsByClassName("f1_container fliped");
-               var revertLength = revert.length;
-               for (i = 0; i < revertLength; i++) {
-
-                revert[0].className = "f1_container";
-               }
-              setTimeout(delay, x);
-              function delay(){
-              var randomArr = [], trackingArr = [],
-              targetCount = 20, currentCount = 0,
-              min = 1, max = 112,
-              rnd;
-
-              while (currentCount < targetCount) {
-                rnd = Math.floor(Math.random() * (max - min + 1)) + min;
-                if (!trackingArr[rnd]) {
-                  trackingArr[rnd] = rnd;
-                  randomArr[currentCount] = rnd;
-                  randomArr[currentCount + 1] = rnd;
-                  currentCount += 2;
-                } 
-              }
-              var i = randomArr.length;
-              while (--i) {
-                var j = Math.floor(Math.random() * (i + 1))
-                var temp = randomArr[i];
-                randomArr[i] = randomArr[j];
-                randomArr[j] = temp;}
-            for (i = 0; i < 20; i++) {
-                document.getElementById("changer".concat(i)).src = pictures[randomArr[i]].picLocation;
-               }
-               }
-             }
-/* ------------ LOGIC ------------  */
+/* ------------ GLOBAL VARIABLES ------------  */
 var container1="";
 var container2="";
 var url1;
 var url2;
 var count = 0;
 var score = 0;
+var multiplier = 1;
+var time = 0;
+var matches = 0;
 
+/* ------------ RESET IMAGES ------------  */         
+function newGame(x) {
+  time = 0;
+  var revert = document.getElementsByClassName("f1_container fliped");
+   var revertLength = revert.length;
+   for (i = 0; i < revertLength; i++) {
+
+    revert[0].className = "f1_container";
+   }
+  setTimeout(delay, x);
+  function delay(){
+  var randomArr = [], trackingArr = [],
+  targetCount = 20, currentCount = 0,
+  min = 1, max = 112,
+  rnd;
+
+  while (currentCount < targetCount) {
+    rnd = Math.floor(Math.random() * (max - min + 1)) + min;
+    if (!trackingArr[rnd]) {
+      trackingArr[rnd] = rnd;
+      randomArr[currentCount] = rnd;
+      randomArr[currentCount + 1] = rnd;
+      currentCount += 2;
+    } 
+  }
+  var i = randomArr.length;
+  while (--i) {
+    var j = Math.floor(Math.random() * (i + 1))
+    var temp = randomArr[i];
+    randomArr[i] = randomArr[j];
+    randomArr[j] = temp;}
+for (i = 0; i < 20; i++) {
+    document.getElementById("changer".concat(i)).src = pictures[randomArr[i]].picLocation;
+   }
+   }
+ }
+
+/* ------------ LOGIC ------------  */
 function logic(card){
 count++  
 if (count == 1) {
@@ -51,10 +57,16 @@ if (count == 2) {
   url2 = card.getElementsByTagName("img")[1].getAttribute("src");
   container2 = card.getAttribute("id");
   if (url1 == url2) {
-    score++
+    score = score + (1 * multiplier);
+    multiplier++
+    matches++
     card1 = 0;
     card2 = 0;
     count = 0;
+    document.getElementById("score").innerHTML=score;
+    if (matches == 10) {
+      window.alert(score);
+    }
 
   } else {
     setTimeout(delay, 500);
@@ -64,42 +76,32 @@ if (count == 2) {
     card1 = 0;
     card2 = 0;
     count = 0;
+    multiplier = 1;
     }
   }
  }
 }
+
 /* ------------ FLIP COUNT ------------  */
-      //   var card1 = 0;
-      //   var card2 = 0;
-      //   var score = 0;
-      //   var logicCount = 0;
-      // function logic(x){
-      //   logicCount++;
-      //     "card" + logicCount = x;
-      //     if(card1 != 0){
-      //       if(card2 != 0){
-      //         if(card1 == card2){
-      //           score++;
-      //         }
-      //         else{
-      //       card1.className = "f1_container"
-      //       card2.className = "f1_container"
-      //       card1 = 0;
-      //       card2 = 0;
-      //       logicCount = 0;
-      //       }
-      //     }
-      // }
+
+function Time()
+  {
+  time++
+  document.getElementById('time').innerHTML=time;
+  setTimeout(function(){Time()},1000);
+  }
 
 
 /* ------------ FLIP FUNCTIONALITY ------------  */
         function flip(card){
         // logic(card) 
     // window.alert(card.getElementsByTagName("img")[1].getAttribute("src"));
+  if (count != 2) {
     if(card.className == "f1_container"){
      card.className += " fliped";
      logic(card);
-   }
+    }
+  }
 //    else
 //     card.className = "f1_container";
 }
@@ -115,6 +117,7 @@ if (count == 2) {
 }
 
 /* ------------ ADD RANDOM PICTURES ------------  */
+
             var pictures = [
                 {"picLocation": "/test/pic/g-rp.jpg", "picName": "Riot"},
                 {"picLocation": "/test/pic/1_Web_0.jpg", "picName": "Annie"},
@@ -257,11 +260,11 @@ if (count == 2) {
 
 /* ------------ HIDE BUTTONS ------------  */
 function hideButtons() {
-  document.getElementById("menu").style.display="none";
+  document.getElementById("mainmenu").style.display="none";
 }
 
 function showButtons() {
-  document.getElementById("menu").style.display="block";
+  document.getElementById("mainmenu").style.display="block";
 }
 
 function hideGame() {
@@ -276,6 +279,11 @@ function hideStuff(game){
    document.getElementById("game").style.visibility="hidden";
 }
 
+/* ------------ RUN START FUNCTIONS ------------  */
 
+function start() {
+  newGame(0);
+  Time();
+}
 
 
