@@ -8,9 +8,33 @@ var score = 0;
 var multiplier = 1;
 var time = 0;
 var matches = 0;
+var streak = 0;
+var unFlipDelay = 300;
 
-/* ------------ RESET IMAGES ------------  */         
+/* ------------ CACHE IMAGES ------------  */ 
+var jsonLength = 0;
+/* get JSON length */
+for (var picLocation in pictures) {
+    if (pictures.hasOwnProperty(picLocation)) {
+        jsonLength++;
+    }
+}
+
+var imageCache = [];
+
+for (var x = 0; x<jsonLength; x++) {
+  imageCache[x] = new Image();
+  imageCache[x].src = pictures[x].picLocation;
+}
+
+
+/* ------------ RESET IMAGES (New Game) ------------  */         
 function newGame(x) {
+  matches = 0;
+  score = 0;
+  streak = 0;
+  multiplier = 1;
+  document.getElementById("score").innerHTML=score;
   time = 0;
   var revert = document.getElementsByClassName("f1_container fliped");
    var revertLength = revert.length;
@@ -46,6 +70,8 @@ for (i = 0; i < 20; i++) {
    }
  }
 
+
+
 /* ------------ LOGIC ------------  */
 function logic(card){
 count++  
@@ -58,25 +84,48 @@ if (count == 2) {
   container2 = card.getAttribute("id");
   if (url1 == url2) {
     score = score + (1 * multiplier);
-    multiplier++
+    streak ++
+    if (streak > 1){
+      multiplier += multiplier;
+    }
     matches++
     card1 = 0;
     card2 = 0;
     count = 0;
     document.getElementById("score").innerHTML=score;
+    // End of game scoring "matches == 10"
     if (matches == 10) {
-      window.alert(score);
+      var defaultScore = score;
+      var bonus = 1;
+      if (time <= 30) {
+        bonus = 10;
+      } 
+      else if(time <= 45) {
+       bonus = 7;
+      } 
+      else if(time <= 60) {
+      bonus = 4;
+      }
+      else if(time <= 90) {
+        bonus = 3;
+      }
+      else if(time <= 120) {
+        bonus = 2;
+      }
+      score = score * bonus;
+    
+      window.alert("Score: " + defaultScore +  "\nTime " + time + "\nTime Bonus Multiplier: " + bonus + "\nTotal: " + score);
     }
 
   } else {
-    setTimeout(delay, 500);
+    setTimeout(delay, unFlipDelay);
     function delay() {
     document.getElementById(container1).className="f1_container";
     document.getElementById(container2).className="f1_container";
     card1 = 0;
     card2 = 0;
     count = 0;
-    multiplier = 1;
+    streak = 0;
     }
   }
  }
@@ -108,12 +157,21 @@ function Time()
 
 /* ------------ Test Flip All ------------  */
         function testFlipAll(){
-     var flipAll = document.getElementsByClassName("f1_container");
+            var flipAll = document.getElementsByClassName("f1_container");
                var flipAllLength = flipAll.length;
                for (i = 0; i < flipAllLength; i++) {
 
                 flipAll[i].className = "f1_container fliped";
                }
+}
+
+      function testRevertAll(){
+          var unFlipAll = document.getElementsByClassName("f1_container fliped");
+             var unFlipAllLength = unFlipAll.length;
+             for (i = 0; i < 20; i++) {
+
+              unFlipAll[0].className = "f1_container";
+             }
 }
 
 /* ------------ ADD RANDOM PICTURES ------------  */
