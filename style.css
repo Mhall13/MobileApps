@@ -2,10 +2,23 @@
     body {
       margin: 0;
       padding: 0;
+      background-color: gray;
     }
+
     #game {
       overflow: hidden;
       margin: 1%;
+      display: block;
+    }
+
+   #mainmenu {
+      text-align: center;
+      display: block;
+    }
+
+    #devMenu {
+
+      display: none;
     }
 
 /* Portrait */
@@ -52,7 +65,7 @@
 
       .f1_card {
         -webkit-transform-style: preserve-3d;
-        -webkit-transition: all .3s linear;
+        -webkit-transition: all .1s linear;
       }
       .fliped .f1_card {
         -webkit-transform: rotateY(180deg);
@@ -78,3 +91,4 @@
         -khtml-border-radius: 3px;
         border-radius: 3px;
       }
+
