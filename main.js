@@ -7,9 +7,11 @@ var count = 0;
 var score = 0;
 var multiplier = 1;
 var time = 0;
+var toggleTimer = 0;
 var matches = 0;
 var streak = 0;
 var unFlipDelay = 300;
+var displayedTimeBonus = 10;
 
 /* ------------ CACHE IMAGES ------------  */ 
 var jsonLength = 0;
@@ -34,6 +36,8 @@ function newGame(x) {
   score = 0;
   streak = 0;
   multiplier = 1;
+  toggleTimer = 0;
+  count = 0;
   document.getElementById("score").innerHTML=score;
   time = 0;
   var revert = document.getElementsByClassName("f1_container fliped");
@@ -87,6 +91,7 @@ if (count == 2) {
     streak ++
     if (streak > 1){
       multiplier += multiplier;
+      document.getElementById("streak").innerHTML=streak;
     }
     matches++
     card1 = 0;
@@ -131,13 +136,29 @@ if (count == 2) {
  }
 }
 
-/* ------------ FLIP COUNT ------------  */
+/* ------------ TIME ------------  */
 
-function Time()
-  {
-  time++
+function Time() {
+
+  time += toggleTimer;
   document.getElementById('time').innerHTML=time;
   setTimeout(function(){Time()},1000);
+      if (time <= 30) {
+        displayedTimeBonus = 10;
+      } 
+      else if(time <= 45) {
+       displayedTimeBonus = 7;
+      } 
+      else if(time <= 60) {
+      displayedTimeBonus = 4;
+      }
+      else if(time <= 90) {
+        displayedTimeBonus = 3;
+      }
+      else if(time <= 120) {
+        displayedTimeBonus = 2;
+      }
+      document.getElementById('multiplier').innerHTML= "x" + displayedTimeBonus;
   }
 
 
@@ -145,6 +166,7 @@ function Time()
         function flip(card){
         // logic(card) 
     // window.alert(card.getElementsByTagName("img")[1].getAttribute("src"));
+  toggleTimer = 1;
   if (count != 2) {
     if(card.className == "f1_container"){
      card.className += " fliped";
@@ -337,11 +359,26 @@ function hideStuff(game){
    document.getElementById("game").style.visibility="hidden";
 }
 
+function toggleMe(btn,a){
+    var e=document.getElementById(a);
+    if(!e)return true;
+    if(e.style.display=="none"){
+      e.style.display="block";
+      btn.value = "Hide";
+   }
+   else {
+      e.style.display="none";
+      btn.value = "Show";
+   }
+   return true;
+  }
+
 /* ------------ RUN START FUNCTIONS ------------  */
 
 function start() {
   newGame(0);
   Time();
+
 }
 
 
