@@ -18,17 +18,9 @@
 <body onload="start()">
     <div id="mainmenu">
         <input type="button" value="New Game" onclick="newGame(200)">
-        <input type="button" value="Show All" onclick="testFlipAll()">
-        <input type="button" value="Hide All" onclick="testRevertAll()">
-  
-        <input type="button" value="Hide Buttons" onclick="hideButtons()"> 
-        <input type="button" value="Show Buttons" onclick="showButtons()">
-        <input type="button" value="Hide Game" onclick="hideGame()">
-        <input type="button" value="Show Game" onclick="showGame()">
     </div>
   
     <div id="game">
-
         <!-- Define all of the tiles: -->
         <div class="f1_container" id="container1" onClick="flip(this)">
             <div class="scale_box">
@@ -289,11 +281,22 @@
                 </div>
             </div>
         </div>
-    
-    </div><!-- /#game -->
-    <div>
+        <div>
         <span>Score: </span><span id="score">0</span>
-        <span>Time: </span><span id="time">0</span>
+        <span> Time: </span><span id="time">0</span>
+        <span> Time Multiplier: </span><span id="multiplier">0</span>
+        <span> Streak: </span><span id="streak">0</span>
+        <br>
+        <input type="button" onclick="return toggleMe(this,'devMenu')" value="Temp Dev Controls">
     </div>
+    </div><!-- /#game -->
+
+    <div id="devMenu">
+        <input type="button" value="Hide Game" onclick="hideGame()">
+        <input type="button" value="Show Game" onclick="showGame()">
+        <br>
+        <input type="button" value="Hide All " onclick="testRevertAll()">
+        <input type="button" value="Flip All" onclick="testFlipAll()"> 
+    </div>  
 </body>
 </html>
